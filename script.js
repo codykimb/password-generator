@@ -115,17 +115,17 @@ function generatePassword() {
   }
 
   // Else if for 1 positive option
-  else if (confirmCharacter) {
-    userChoices = characters;
+  else if (confirmChar) {
+    userChoices = characters.concat();
   }
   else if (confirmNum) {
-    userChoices = numbers;
+    userChoices = numbers.concat();
   }
-  else if (confirmLowercase) {
-    userChoices = alphaLow;
+  else if (confirmLower) {
+    userChoices = alphaLow.concat();
   }
-  else if (confirmUppercase) {
-    userChoices = alphaUp;
+  else if (confirmUpper) {
+    userChoices = alphaUp.concat();
   };
 
   // password variable will be an array with user generated length
