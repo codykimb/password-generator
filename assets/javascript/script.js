@@ -76,7 +76,8 @@ function generatePassword() {
   // if the user chooses "cancel" to all options, alert user, reprompt
   if (!confirmNum && !confirmChar && !confirmLower && !confirmUpper) {
     userChoices = alert("You must choose at least one option! Please start over.");
-    passLength = parseInt(prompt("How many characters would you like in your password? Please choose between 8 and 128."));
+    generatePassword();
+    // passLength = parseInt(prompt("How many characters would you like in your password? Please choose between 8 and 128."));
   }
 
   // if the user chooses all 4 options
