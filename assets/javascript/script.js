@@ -93,7 +93,7 @@ function generatePassword() {
   else if (confirmNum && confirmLower && confirmUpper) {
     userChoices = characters.concat(alphaLow, alphaUp);
   }
-  else if (confirmNum && confirmLower && confirmUpper) {
+  else if (confirmChar && confirmLower && confirmUpper) {
     userChoices = numbers.concat(alphaLow, alphaUp);
   }
 
