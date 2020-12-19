@@ -39,6 +39,10 @@ function generatePassword() {
 
   // once they choose a valid option ask for input variables
   else {
+    if (passLength) {
+      alert("Your password will be " + passLength + " characters long.")
+    }
+
     confirmNum = confirm("Will your password include numbers?");
       if (confirmNum) {
         alert("Your password will include numbers!")
