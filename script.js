@@ -40,9 +40,33 @@ function generatePassword() {
   // once they choose a valid option ask for input variables
   else {
     confirmNum = confirm("Will your password include numbers?");
+      if (confirmNum) {
+        alert("Your password will include numbers!")
+      }
+      else {
+        alert("Your password will NOT include numbers.")
+      }
     confirmChar = confirm("Will your password include special characters?");
+      if (confirmChar) {
+        alert("Your password will include special characters!")
+      }
+      else {
+        alert("Your password will NOT include special characters.")
+      }
     confirmLower = confirm("Will your password include lowercase letters?");
+      if (confirmNum) {
+        alert("Your password will include lowercase letters!")
+      }
+      else {
+        alert("Your password will NOT include lowercase letters.")
+      }
     confirmUpper = confirm("Will your password include uppercase letters?");
+      if (confirmNum) {
+        alert("Your password will include uppercase letters!")
+      }
+      else {
+        alert("Your password will NOT include uppercase letters.")
+      }
   };
 
   // if the user chooses "cancel" to all options, alert user, reprompt
