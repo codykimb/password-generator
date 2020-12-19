@@ -8,7 +8,7 @@ var confirmUpper;
 var confirmLower;
 
 // arrays of choices
-var characters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var characters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var alphaLow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -47,7 +47,7 @@ function generatePassword() {
 
   // if the user chooses "cancel" to all options, alert user, reprompt
   if (!confirmNum && !confirmChar && !confirmLower && !confirmUpper) {
-    userChoices = alert("You must choose at least one option!");
+    userChoices = alert("You must choose at least one option! Please start over.");
     passLength = parseInt(prompt("How many characters would you like in your password? Please choose between 8 and 128."));
   }
 
@@ -57,36 +57,36 @@ function generatePassword() {
   }
 
   // 3 positive options
-  else if (confirmChar && confirmNum && confirmUpper) {
+  else if (confirmNum && confirmChar && confirmUpper) {
     userChoices = characters.concat(numbers, alphaUp);
   }
-  else if (confirmChar && confirmNum && confirmLow) {
+  else if (confirmNum && confirmChar && confirmLower) {
     userChoices = characters.concat(numbers, alphaLow);
   }
-  else if (confirmChar && confirmLow && confirmUp) {
+  else if (confirmNum && confirmLower && confirmUpper) {
     userChoices = characters.concat(alphaLow, alphaUp);
   }
-  else if (confirmNumber && confirmLowercase && confirmUppercase) {
+  else if (confirmNum && confirmLower && confirmUpper) {
     userChoices = numbers.concat(alphaLow, alphaUp);
   }
 
   // Else if for 2 positive options 
-  else if (confirmChar && confirmNum) {
+  else if (confirmNum && confirmChar) {
     userChoices = characters.concat(numbers);
   } 
-  else if (confirmCharacter && confirmLowercase) {
+  else if (confirmChar && confirmLower) {
     userChoices = characters.concat(alphaLow);
   } 
-  else if (confirmCharacter && confirmUppercase) {
+  else if (confirmChar && confirmUpper) {
     userChoices = characters.concat(alphaUp);
   }
-  else if (confirmLowercase && confirmNumber) {
+  else if (confirmLower && confirmNum) {
     userChoices = alphaLow.concat(number);
   } 
-  else if (confirmLowercase && confirmUppercase) {
+  else if (confirmLower && confirmUpper) {
     userChoices = alphaLow.concat(alphaUp);
   } 
-  else if (confirmNumber && confirmUppercase) {
+  else if (confirmNum && confirmUpper) {
     userChoices = numbers.concat(alphaUp);
   }
 
@@ -94,7 +94,7 @@ function generatePassword() {
   else if (confirmCharacter) {
     userChoices = characters;
   }
-  else if (confirmNumber) {
+  else if (confirmNum) {
     userChoices = numbers;
   }
   else if (confirmLowercase) {
@@ -115,7 +115,6 @@ function generatePassword() {
 
   //convert array into string
   var passStr = passwordArray.join("");
-  writePassword(passStr);
   return passStr;
 }
 
@@ -123,12 +122,10 @@ function generatePassword() {
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword(passStr) {
+function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
