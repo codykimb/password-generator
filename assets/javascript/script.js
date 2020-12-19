@@ -1,5 +1,3 @@
-// Assignment code here
-
 // User input variables
 var passLength;
 var confirmNum;
