@@ -91,10 +91,10 @@ function generatePassword() {
     userChoices = characters.concat(numbers, alphaLow);
   }
   else if (confirmNum && confirmLower && confirmUpper) {
-    userChoices = characters.concat(alphaLow, alphaUp);
+    userChoices = numbers.concat(alphaLow, alphaUp);
   }
   else if (confirmChar && confirmLower && confirmUpper) {
-    userChoices = numbers.concat(alphaLow, alphaUp);
+    userChoices = characters.concat(alphaLow, alphaUp);
   }
 
   // Else if for 2 positive options 
@@ -108,7 +108,7 @@ function generatePassword() {
     userChoices = characters.concat(alphaUp);
   }
   else if (confirmLower && confirmNum) {
-    userChoices = alphaLow.concat(number);
+    userChoices = alphaLow.concat(numbers);
   } 
   else if (confirmLower && confirmUpper) {
     userChoices = alphaLow.concat(alphaUp);
