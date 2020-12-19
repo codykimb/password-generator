@@ -58,14 +58,14 @@ function generatePassword() {
         alert("Your password will NOT include special characters.")
       }
     confirmLower = confirm("Will your password include lowercase letters?");
-      if (confirmNum) {
+      if (confirmLower) {
         alert("Your password will include lowercase letters!")
       }
       else {
         alert("Your password will NOT include lowercase letters.")
       }
     confirmUpper = confirm("Will your password include uppercase letters?");
-      if (confirmNum) {
+      if (confirmUpper) {
         alert("Your password will include uppercase letters!")
       }
       else {
